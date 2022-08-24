@@ -1,0 +1,18 @@
+.dropdown {
+    background-color: black;
+    width: 200%;
+    padding: 15px;
+    display: none;
+}
+
+.dropdownBtn:hover .dropdown {
+    display: block;
+}
+
+.dropdownBtn:hover {
+    color: red;
+}
+
+li {
+    list-style: none;
+}
