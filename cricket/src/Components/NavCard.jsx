@@ -1,11 +1,13 @@
 import { Image, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 
 
 
-const NavCard = ({ logo, title }) => {
+const NavCard = ({ logo, title, to }) => {
+
     return (
         <VStack padding="0.5rem" w="10%" _hover={{
             background: "gray.700",
@@ -17,7 +19,10 @@ const NavCard = ({ logo, title }) => {
                 src={logo}
                 alt={title}
             />
-            <Text height="2rem" fontSize="xs">{title}</Text>
+
+            <Link to={to}>
+                <Text height="2rem" fontSize="xs">{title}</Text>
+            </Link>
         </VStack >
     )
 }

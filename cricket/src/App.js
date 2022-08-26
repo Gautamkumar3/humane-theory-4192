@@ -5,6 +5,8 @@ import Navbar from './Components/Navbar';
 import Criclytics from './Pages/Criclytics';
 import Fantacy from './Pages/Fantacy';
 import Home from './Pages/Home';
+import Login from './Pages/Login';
+import AllRoutes from './Routes/AllRoutes';
 
 function App() {
   return (
@@ -13,7 +15,8 @@ function App() {
       {/* <Home /> */}
       {/* <Fantacy />
       <Footer /> */}
-      <Criclytics />
+      {/* <Criclytics /> */}
+      <AllRoutes />
     </div>
   );
 }
