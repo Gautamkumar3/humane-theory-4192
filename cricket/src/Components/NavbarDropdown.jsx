@@ -8,6 +8,7 @@ import {
 
 } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
+import Login from '../Pages/Login'
 
 const NavbarDropdown = () => {
     return (
@@ -38,7 +39,7 @@ const NavbarDropdown = () => {
                 </MenuItem>
                 <MenuItem _hover={{ background: "gray" }} gap={4}>
                     <Image src='https://www.cricket.com/svgs/icons/profile.svg' />
-                    <Text>Profile</Text>
+                    <Login />
                 </MenuItem>
             </MenuList>
         </Menu>

@@ -1,0 +1,14 @@
+.inputTag {
+    border-bottom: 1px solid gray;
+    padding: 8px;
+    font-weight: 40px;
+}
+
+.inputTag:focus {
+    border: none;
+    background-color: yellow;
+}
+
+.PhoneInput--focus {
+    border: none;
+}
