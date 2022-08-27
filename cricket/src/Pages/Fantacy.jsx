@@ -9,11 +9,14 @@ import UpcomingMatch from '../FantacyComponent/UpcomingMatch'
 
 const Fantacy = () => {
     return (
-        <Box w="70%" m="auto" bg="#172132">
-            <UpcomingMatch />
-            <Preview />
-            <FantacyVideos />
-        </Box>
+        <>
+            <Box w="70%" m="auto" bg="#172132">
+                <UpcomingMatch />
+                <Preview />
+                <FantacyVideos />
+            </Box>
+            <Footer />
+        </>
     )
 }
 

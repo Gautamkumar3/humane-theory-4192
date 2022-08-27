@@ -1,5 +1,6 @@
 import { Box, Container, Flex, Image, Spacer, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import NavbarDropdown from './NavbarDropdown'
 import NavCard from './NavCard'
 
@@ -50,14 +51,16 @@ const navData = [
 
 const Navbar = () => {
     return (
-        <Container maxW='container.xll' bg='black' color='white' padding="1rem" position="sticky" top="0px" opacity="2" zIndex="1">
+        <Container maxW='container.xll' bg='black' color='white' padding="1rem" position="sticky" top="0px" opacity="2" zIndex="5" >
             <Flex justifyContent="right" w="70%" m="auto">
-                <Box padding="1rem">
-                    <Image
-                        src='https://www.cricket.com/cricket.com.svg'
-                        alt='logo'
-                    />
-                </Box>
+                <Link to="/">
+                    <Box padding="1rem">
+                        <Image
+                            src='https://www.cricket.com/cricket.com.svg'
+                            alt='logo'
+                        />
+                    </Box>
+                </Link>
                 <Spacer />
                 <Flex align="center" textAlign="center" w="70%" justify={"space-around"}>
 
