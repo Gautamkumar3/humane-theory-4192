@@ -12,7 +12,6 @@ const Criclytics = () => {
             <Box w="70%" m="auto">
                 <RotateImage />
                 <CrickMatch />
-
             </Box>
             <Footer />
         </>
