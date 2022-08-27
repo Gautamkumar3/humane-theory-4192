@@ -6,20 +6,15 @@ import { useEffect, useState } from 'react'
 const ScheduleCard = ({ type = "ODI", namea, imga, nameb, imgb, status, date, name, venue }) => {
 
     let day = name.split(",")[1]
-    let x = new Date().toDateString()
+    // let x = new Date().toDateString()
 
-    const [current, setCurrent] = useState([])
-
-
-    useEffect(() => {
-        setCurrent(x)
-    }, [])
 
     return (
 
 
         <>
             <Box border="1px solid gray" bg="whiteAlpha.800" padding="1rem" borderRadius="5px">
+
                 <HStack mb={2}>
                     <Badge bg="gray.500" p="3px" borderRadius="5px" color="white">{type}</Badge>
                     <Text>{status}</Text>
@@ -42,7 +37,7 @@ const ScheduleCard = ({ type = "ODI", namea, imga, nameb, imgb, status, date, na
                     </HStack>
                     <Text>{day}</Text>
                 </Flex>
-                <Badge fontSize="10px" px="10px" py="3px" borderRadius="8px" bg="#feead9" fontWeight="light">{current}</Badge>
+                <Badge fontSize="10px" px="10px" py="3px" borderRadius="8px" bg="#feead9" fontWeight="light">{date}</Badge>
             </Box>
         </>
 

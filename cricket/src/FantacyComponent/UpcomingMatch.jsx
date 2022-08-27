@@ -1,4 +1,4 @@
-import { Box, Flex, SimpleGrid, Text } from '@chakra-ui/react'
+import { Box, CircularProgress, Flex, SimpleGrid, Text } from '@chakra-ui/react'
 import axios from 'axios'
 import React, { useEffect } from 'react'
 import { useState } from 'react'
@@ -10,11 +10,14 @@ const UpcomingMatch = () => {
 
     const [cardData, setcardData] = useState([])
     const [completeData, setCompleteData] = useState([])
+    const [loading, setLoading] = useState(false)
 
 
     useEffect(() => {
+        setLoading(true)
         axios.get("https://gautam-todos-api.herokuapp.com/data?_page=1&_limit=6").then((res) => {
             setcardData(res.data)
+            setLoading(false)
         }).catch((er) => {
             console.log(er)
         })
@@ -23,13 +26,19 @@ const UpcomingMatch = () => {
 
 
     useEffect(() => {
+        setLoading(true)
         axios.get("https://gautam-todos-api.herokuapp.com/data?_page=4&_limit=4").then((res) => {
             setCompleteData(res.data)
+            setLoading(false)
         }).catch((er) => {
             console.log(er)
         })
     }, [])
 
+
+    if (loading) {
+        return <Box w="10%" m="auto"><CircularProgress isIndeterminate size='200px' m="auto" color='green.300' /> </Box>
+    }
 
     return (
         <Box >

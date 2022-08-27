@@ -1,19 +1,26 @@
-import { Box, Flex, HStack, Image, SimpleGrid, Text } from '@chakra-ui/react'
+import { Box, CircularProgress, Flex, HStack, Image, SimpleGrid, Text } from '@chakra-ui/react'
 import axios from 'axios'
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 
-const News = () => {
+const News = ({ page, limit }) => {
     const [news, setNews] = useState([])
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-        axios.get(`https://gautam-todos-api.herokuapp.com/articles?_page=14&_limit=6`).then((res) => {
+        setLoading(true)
+        axios.get(`https://gautam-todos-api.herokuapp.com/articles?_page=${page}&_limit=${limit}`).then((res) => {
             setNews(res.data)
+            setLoading(false)
         }).catch((er) => {
             console.log(er)
         })
     }, [])
+
+    if (loading) {
+        return <Box w="10%" m="auto"><CircularProgress isIndeterminate size='200px' m="auto" color='green.300' /> </Box>
+    }
 
     return (
         <Box width={["90%", "80%", "70%"]} margin="auto" background="white" padding="10px" boxShadow='xs' p='6' rounded='md' bg='white' my="20px">

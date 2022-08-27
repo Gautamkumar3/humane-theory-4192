@@ -12,7 +12,7 @@ const Home = () => {
             <MatchSummary />
             <AddImage />
             <FeaturedVideos />
-            <News />
+            <News page={14} limit={6} />
             <DataDigest />
             <Footer />
         </div>
