@@ -53,7 +53,14 @@ export default function Login() {
         e.preventDefault()
         setError(false)
         if (number === "" || number === undefined || number.length < 10) {
-            alert("Please enter a valid Phone number")
+            toast({
+                title: 'Something went wrong',
+                position: position,
+                description: `Please enter a valid Phone number`,
+                status: 'warning',
+                duration: 9000,
+                isClosable: true,
+            })
         }
 
         try {
@@ -107,7 +114,7 @@ export default function Login() {
                 position: position,
                 description: `Your OTP is incorrect`,
                 status: 'error',
-                duration: 9000,
+                duration: 6000,
                 isClosable: true,
             })
 

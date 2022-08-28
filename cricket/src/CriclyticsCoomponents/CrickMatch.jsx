@@ -1,4 +1,4 @@
-import { Badge, Box, Flex, HStack, Image, SimpleGrid, Text } from '@chakra-ui/react'
+import { Badge, Box, CircularProgress, Flex, HStack, Image, SimpleGrid, Text } from '@chakra-ui/react'
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useEffect } from 'react'
@@ -22,7 +22,11 @@ const CrickMatch = () => {
             console.log(er)
         })
     }, [])
-    console.log(data)
+
+
+    if (loading) {
+        return <Box w="10%" m="auto"><CircularProgress isIndeterminate size='200px' m="auto" color='green.300' /> </Box>
+    }
 
     return (
         <Box >
