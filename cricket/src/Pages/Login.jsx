@@ -21,6 +21,7 @@ import {
     PinInputField,
     HStack,
     PinInput,
+    useToast,
 } from '@chakra-ui/react'
 import OTPverifier from "./OTP"
 import { useNavigate } from "react-router-dom"
@@ -37,6 +38,8 @@ export default function Login() {
     const [otpPage, setOtpPage] = useState(false)
     const [confirmObj, setConfirmObj] = useState("");
     const [otp, setOtp] = useState("")
+    const toast = useToast()
+    const position = ['top']
 
     const navigate = useNavigate()
 
@@ -55,7 +58,14 @@ export default function Login() {
 
         try {
             const response = await setUpReCaptch(number)
-            alert(`OTP has been set to your mobile number ${number}`)
+            toast({
+                title: 'Account created.',
+                position: position,
+                description: `We've created your account for you and send OTP for your mobile number ${number}`,
+                status: 'success',
+                duration: 9000,
+                isClosable: true,
+            })
             setConfirmObj(response)
             setOtpPage(true)
         } catch (er) {
@@ -68,17 +78,39 @@ export default function Login() {
 
     const verifyOtp = async () => {
         if (otp === "" || otp === null || otp.length > 6) {
-            alert("Incorrect OTP")
+            toast({
+                title: 'Wrong OTP',
+                position: position,
+                description: `Your OTP is incorrect`,
+                status: 'error',
+                duration: 9000,
+                isClosable: true,
+            })
             return
         }
 
         await confirmObj.confirm(otp).then((result) => {
-            alert("You have logged in successfully")
+            toast({
+                title: 'Login Successful',
+                position: position,
+                description: `You have logged in successfully`,
+                status: 'success',
+                duration: 9000,
+                isClosable: true,
+            })
             onClose()
-            setOtpPage(true)
+            setOtpPage(false)
             navigate("/")
         }).catch((er) => {
-            alert("wrong OTP")
+            toast({
+                title: 'Wrong OTP',
+                position: position,
+                description: `Your OTP is incorrect`,
+                status: 'error',
+                duration: 9000,
+                isClosable: true,
+            })
+
         })
 
     }
