@@ -44,6 +44,7 @@ const Schedule = () => {
                 {data?.map((el) => <ScheduleCard key={el.id} type={el.matchType} namea={el.namea} imga={el.imga} nameb={el.nameb} imgb={el.imgb} status={el.status} date={el.date} name={el.name} venue={el.venue} />)}
             </SimpleGrid>}
         </Box>
+
     )
 }
 
