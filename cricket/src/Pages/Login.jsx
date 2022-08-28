@@ -59,7 +59,7 @@ export default function Login() {
                 description: `Please enter a valid Phone number`,
                 status: 'warning',
                 duration: 9000,
-                isClosable: true,
+                isClosable: true
             })
         }
 
