@@ -38,7 +38,6 @@ const Schedule = () => {
                 <Button onClick={() => setFilter("")} colorScheme='teal' variant='outline' w="20%">
                     ALL
                 </Button>
-
             </Stack>
             {loading ? <Box w="10%" m="auto"><CircularProgress isIndeterminate size='200px' m="auto" color='green.300' /> </Box> : <SimpleGrid columns={[2, 3]} spacing={3}>
                 {data?.map((el) => <ScheduleCard key={el.id} type={el.matchType} namea={el.namea} imga={el.imga} nameb={el.nameb} imgb={el.imgb} status={el.status} date={el.date} name={el.name} venue={el.venue} />)}
