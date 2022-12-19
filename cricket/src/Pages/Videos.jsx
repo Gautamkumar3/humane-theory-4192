@@ -1,17 +1,18 @@
-import { Box, Heading, Text } from '@chakra-ui/react'
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { Box, Heading, Text } from "@chakra-ui/react";
+import React from "react";
+import { Link } from "react-router-dom";
+import Footer from "../Components/Footer";
+import VideoCard from "../Video/VideoCard";
 
 const Videos = () => {
-    return (
-        <Box width={"30%"} m="auto" mt={10} textAlign="center">
-            <Heading>Videos Page Under construction</Heading>
-            <Link to="/">
-                <Text color="blue" fontSize="xl" fontWeight="bold" my={5}>Back to Home page</Text>
-            </Link>
-            <Box>.</Box>
-        </Box>
-    )
-}
+  return (
+    <>
+      <Box width={"70%"} m="auto" mt={10} textAlign="center">
+        <VideoCard />
+      </Box>
+      <Footer />
+    </>
+  );
+};
 
-export default Videos
+export default Videos;

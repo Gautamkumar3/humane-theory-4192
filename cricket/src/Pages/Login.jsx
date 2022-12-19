@@ -57,7 +57,7 @@ export default function Login() {
         position: position,
         description: `Please enter a valid Phone number`,
         status: "warning",
-        duration: 9000,
+        duration: 5000,
         isClosable: true,
       });
     }
@@ -85,10 +85,10 @@ export default function Login() {
     if (otp === "" || otp === null || otp.length > 6) {
       toast({
         title: "Wrong OTP",
-        position: position,
+        position: "top",
         description: `Your OTP is incorrect`,
         status: "error",
-        duration: 9000,
+        duration: 5000,
         isClosable: true,
       });
       return;
@@ -102,7 +102,7 @@ export default function Login() {
           position: position,
           description: `You have logged in successfully`,
           status: "success",
-          duration: 9000,
+          duration: 5000,
           isClosable: true,
         });
         onClose();
@@ -112,10 +112,10 @@ export default function Login() {
       .catch((er) => {
         toast({
           title: "Wrong OTP",
-          position: position,
+          position: "top",
           description: `Your OTP is incorrect`,
           status: "error",
-          duration: 6000,
+          duration: 5000,
           isClosable: true,
         });
       });
