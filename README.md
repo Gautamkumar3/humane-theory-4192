@@ -5,13 +5,9 @@ Cricket.com, is a sports website that especially deals in cricket. It is powered
 - Login and Signup
 - Navbar
 - Home Page
-- Product Page
-- Pricing Page
-- Why Track Page
-- Career Page
-- Timer Page
-- Add Task
-- Add Project
+- Fantacy center
+- Criclystics
+- Schedule
 - Footer
 
 ## Tech-Stack for Front-End 💻
@@ -24,4 +20,4 @@ Cricket.com, is a sports website that especially deals in cricket. It is powered
 
 ## Link
 
-https://toggl-time-tracking.vercel.app/
+https://gk-cricket.web.app/
