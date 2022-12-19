@@ -5,7 +5,9 @@ import { useEffect } from 'react'
 import CrickCard from './CrickCard'
 
 const getData = () => {
-    return axios.get(`https://gautam-todos-api.herokuapp.com/data?q=Match%20not%20started`)
+    return axios.get(
+      `https://cricket-api-production.up.railway.app/data?q=Match%20not%20started`
+    );
 }
 
 const CrickMatch = () => {

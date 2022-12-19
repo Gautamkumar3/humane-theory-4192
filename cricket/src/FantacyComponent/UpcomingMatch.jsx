@@ -15,12 +15,17 @@ const UpcomingMatch = () => {
 
     useEffect(() => {
         setLoading(true)
-        axios.get("https://gautam-todos-api.herokuapp.com/data?_page=1&_limit=6").then((res) => {
-            setcardData(res.data)
-            setLoading(false)
-        }).catch((er) => {
-            console.log(er)
-        })
+        axios
+          .get(
+            "https://cricket-api-production.up.railway.app/data?_page=1&_limit=6"
+          )
+          .then((res) => {
+            setcardData(res.data);
+            setLoading(false);
+          })
+          .catch((er) => {
+            console.log(er);
+          });
     }, [])
 
 
