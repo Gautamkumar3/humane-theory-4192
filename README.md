@@ -20,4 +20,4 @@ Cricket.com, is a sports website that especially deals in cricket. It is powered
 
 ## Link
 
-https://gk-cricket.web.app/
+https://gk-cricket-clone.vercel.app/
